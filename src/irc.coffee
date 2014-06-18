@@ -62,7 +62,7 @@ class IrcBot extends Adapter
     # Flatten out strings from send
     flattened = []
     for str in strings
-      if typeof str !== 'undefined'
+      if typeof str != 'undefined'
         for line in str.toString().split(/\r?\n/)
           if Array.isArray line
             flattened = flattened.concat line
@@ -325,7 +325,7 @@ class IrcBot extends Adapter
         logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
-      
+
       if not process.env.HUBOT_IRC_PRIVATE or process.env.HUBOT_IRC_IGNOREINVITE
         bot.join channel
 
